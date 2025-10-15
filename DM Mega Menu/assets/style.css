@@ -1,0 +1,25 @@
+.wp-block-navigation-item__label { background-color: red!important;}
+.dm-mega-parent {
+  position: relative;
+}
+
+.dm-mega-submenu {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 100%;
+  width: 100%;
+  background: red;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  grid-template-columns: repeat(4, 1fr);
+  display: grid;
+}
+
+.dm-mega-parent:hover > .dm-mega-submenu {
+  display: grid;
+}
+
+.dm-mega-submenu li {
+  list-style: none;
+}
