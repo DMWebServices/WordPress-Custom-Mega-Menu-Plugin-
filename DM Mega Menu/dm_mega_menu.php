@@ -4,6 +4,7 @@
  * Description: A simple custom mega menu plugin.
  * Version: 1.0
  * Author: Dan
+ * Text Domain: dm-mega-menu
  */
 
 if (!defined('ABSPATH')) exit;
@@ -15,7 +16,10 @@ define('DM_MM_URL', plugin_dir_url(__FILE__));
 require_once DM_MM_PATH . 'includes/class-dm-mega-menu.php';
 
 // Init
-function dm_mega_menu_init() {
-    new DM_Mega_Menu();
+function dm_mm_init() {
+    if ( class_exists('DM_Mega_Menu')) {
+        new DM_Mega_Menu(); 
+    }
 }
-add_action('plugins_loaded', 'dm_mega_menu_init');
+add_action('plugins_loaded', 'dm_mm_init');
+
